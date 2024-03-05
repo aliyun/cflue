@@ -227,7 +227,7 @@ python cflue_main.py \
 ```
 
 ## How to Submit
-If you wish to participate in the evaluation of the custom large model on the Test set, you will first need to prepare a UTF-8 encoded JSON file and write it in the format of [submission_example.json](./submission_example.json). Then, send it as an attachment in an email formatted as below to [CFLUE@alibabacloud.com](mailto:CFLUE@alibabacloud.com), and CC [zhujie951121@gmail.com](mailto:zhujie951121@gmail.com)  to apply.
+If you wish to participate in the evaluation of the custom large model on the Test set, you will first need to prepare a UTF-8 encoded JSON file and write it in the format of [submission_example.json](./submission_example.json). Then, send it as an attachment in an email formatted as below to [CFLUE@alibabacloud.com](mailto:CFLUE@alibabacloud.com) to apply.
 
 ```
 Organization:

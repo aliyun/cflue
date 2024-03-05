@@ -220,7 +220,7 @@ python cflue_main.py \
     --save_result_dir ${result_path}
 ```
 ## 如何提交
-如果期望参与自定义大模型在 Test 集上的评测，您首先需要准备一个 UTF-8 编码的 JSON 文件，并按照[submission_example.json](./submission_example.json)格式编写。然后将其作为附件，按照下面的格式内容发送邮件到 [CFLUE@alibabacloud.com](mailto:CFLUE@alibabacloud.com) ，并抄送 [zhujie951121@gmail.com](mailto:zhujie951121@gmail.com) 进行申请。
+如果期望参与自定义大模型在 Test 集上的评测，您首先需要准备一个 UTF-8 编码的 JSON 文件，并按照[submission_example.json](./submission_example.json)格式编写。然后将其作为附件，按照下面的格式内容发送邮件到 [CFLUE@alibabacloud.com](mailto:CFLUE@alibabacloud.com) 进行申请。
 ```
 单位：
 联系方式：
