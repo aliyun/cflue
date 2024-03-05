@@ -1,36 +1,35 @@
-(English|[简体中文](./README_zh.md))
+([English](./README.md)|简体中文)
 # Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset 
 ![index.jpg](./resources/index.png)
-## CFLUE Version 1.0 — Chinese Financial Language Understanding Evaluation Dataset in the Financial Domain
-Alibaba Cloud, in collaboration with Soochow University, has introduced CFLUE (Chinese Financial Language Understanding Evaluation), a novel and comprehensive benchmark designed to assess the understanding and processing capabilities of large language models within the context of Chinese financial language.
+## CFLUE Version 1.0 — 金融领域中文语言理解评测数据集
+阿里云、苏州大学联合推出了CFLUE（Chinese Financial Language Understanding Evaluation），这是一个新颖的、全面的评估基准，旨在评估大型语言模型在中文金融语境中的理解和处理能力。
 
-CFLUE evaluates the performance of language models through two main dimensions—Knowledge Assessment and Application Assessment.
+CFLUE通过两个主要维度——**知识评估**和**应用评估**来衡量语言模型的性能。
 
-- The Knowledge Assessment component consists of over 38,000 multiple-choice questions selected from 15 different types of financial qualification simulation exams, aimed at testing the language models' ability to predict answers and reason. Each question is accompanied by explanations, which aids in a thorough evaluation of the models' reasoning processes.
+- 知识评估部分包含超过38,000个多项选择题，这些题目选自15种不同的金融资格模拟考试，旨在测试语言模型的答案预测和推理能力。每个问题都伴随有解释，有助于深入评价模型的推理过程。
+- 应用评估部分则提供超过16,000个实例，覆盖文本分类、机器翻译、关系抽取、阅读理解和文本生成等五种经典NLP任务，这些实例源自现有共享任务或由专业人员标注的真实数据。
 
-- The Application Assessment component provides over 16,000 instances covering five classic NLP tasks including text classification, machine translation, relation extraction, reading comprehension, and text generation. These instances are derived from existing shared tasks or annotated real data by professionals.
+整体而言，CFLUE为了解和提升中文金融领域LLMs的能力提供了多角度的见解，并通过CFLUE呼吁对这些模型的能力进行更全面细致的评估。研究团队期望，CFLUE不仅能促进对现有模型的深入了解，还能推动中文金融领域语言模型发展的新步伐。
 
-Overall, CFLUE offers multi-faceted insights for understanding and enhancing the capabilities of LLMs in the Chinese financial domain, and calls for more comprehensive and meticulous assessment of these models through CFLUE. The research team hopes that CFLUE will not only facilitate in-depth understanding of existing models but also drive new strides in the development of language models in the Chinese financial domain.
-
-Currently, the CFLUE V1.0 evaluation dataset is available to the public, with plans to continuously update versions and introduce an integrated platform-based evaluation service in the future. This aims to provide a comprehensive, one-stop evaluation solution for the entire industry.
+目前，CFLUE V1.0 的评估数据集将向公众提供，未来计划不断更新版本并推出集成的平台化评估服务，旨在为整个行业提供全面的一站式评价解决方案。
 
 ![CFLUE3.jpg](./resources/cflue.jpeg)
-## Changelog
+## 更新日志
 
-- **[2024.03.06]** CFLUE has now open-sourced the development set for "Knowledge Assessment" and data samples for "Application Assessment" 🚀🚀🚀；
-## Table of Contents
+- **[2024.03.06]** CFLUE 现已开源“知识评估”的 dev 集和“应用评估”数据样例 🚀🚀🚀；
+## 目录
 
-- [Leaderboard](#leaderboard)
-- [Data](#data)
-- [Quick Start](#quick-start)
-- [How to Submit](#how-to-submit)
+- [排行榜](#排行榜)
+- [数据](#数据)
+- [快速开始](#快速开始)
+- [如何提交](#如何提交)
 - [TODO](#todo)
 - [Licenses](#licenses)
-- [Citations](#citations)
-## Leaderboard
-Below, we list the zero-shot performance of the models we evaluated in the initial version. We have conducted a comprehensive assessment of various large language models on CFLUE, including OpenAI's GPT-4 and GPT-4-turbo, as well as several models for general and financial domains. The results show that GPT-4 and GPT-4-turbo significantly outperform other models in answer prediction for Knowledge Assessment, with accuracy exceeding 60%, demonstrating their leading position in the field but also implying significant room for improvement in other language models. In Application Assessment, although these two models perform well overall, their advantage is somewhat reduced compared to some models specifically designed for Chinese. The study also found that current LLMs in the financial field, such as FinGPT V3, DISC-FinLLM, and Tongyi-Finance, perform poorly in zero-sample tests, indicating that these models’ coverage of financial knowledge needs to be strengthened. On the other hand, lightweight LLMs perform well after supervised fine-tuning, such as ChatGLM3-6B, Qwen-7B, and Baichuan2-7B, whose performance in some tasks is comparable to the larger-parameter ChatGPT.
+- [引用](#引用)
+## 排行榜
+下面列出了我们在初始版本中进行评估的模型的zero-shot性能。我们在CFLUE上对各种大型语言模型进行了综合评估，包括OpenAI的GPT-4和GPT-4-turbo，以及多个针对通用领域和金融领域模型。结果表明，GPT-4和GPT-4-turbo在知识评估的答案预测方面明显优于其他模型，准确率超过60%，显示出它们在该领域的领先地位，但也暗示其他语言模型有显著的提升空间。在应用评估中，尽管这两个模型整体上表现优异，但它们的优势相比某些专门为中文设计的模型有所减弱。研究还发现，目前的金融领域LLMs，如FinGPT V3、DISC-FinLLM和Tongyi-Finance，在零样本测试中表现欠佳，表明这些模型在金融知识方面的覆盖还有待加强。另一方面，轻量级LLMs在经过监督微调后表现出色，如ChatGLM3-6B、Qwen-7B和Baichuan2-7B的性能在某些任务上可与参数量更大的ChatGPT媲美。
 
-### Knowledge Assessment
+### 知识评估
 | **Model** | **Acc** | **Weighted-F1** | **BLEU-1** | **BLEU-4** | **ROUGE-1** | **ROUGE-2** | **ROUGE-L** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Qwen-72B | 72.8±0.23 | 73.04±0.23 | 45.78±0.39 | 26.76±0.21 | 50.78±0.15 | 31.48±0.13 | 45.28±0.15 |
@@ -48,8 +47,8 @@ Below, we list the zero-shot performance of the models we evaluated in the initi
 | LLaMA2-7B | 18.79±0.25 | 15.54±0.21 | 13.11±0.11 | 5.49±0.07 | 22.02±0.19 | 9.72±0.14 | 19.06±0.2 |
 | LLaMA2-70B | 17.66±0.39 | 10.34±0.31 | 9.46±0.16 | 3.93±0.1 | 17.77±0.17 | 7.65±0.16 | 15.48±0.18 |
 
-### Application Assessment
-| **Model/Task**      | **Fin_TC** | **Fin_MT en2zh** | -          | **Fin_MT zh2en** | -          | **Fin_RE** | **Fin_RC** | **Fin_TG** | **Avg.** |
+### 应用评估
+| **模型/任务**           | **Fin_TC** | **Fin_MT en2zh** | -          | **Fin_MT zh2en** | -          | **Fin_RE** | **Fin_RC** | **Fin_TG** | **Avg.** |
 |---------------------| --- | --- |------------| --- |------------| --- | --- | --- | --- |
 |                     | **ACC** | **BLEU-4** | **COMET**  | **BLEU-4** | **COMET**  | **F1** | **ROUGE-L** | **ROUGE-L** | - |
 | GPT-4               | 61.23±0.03 | 21.92±0.03 | 78.32±0.09 | 21.05±0.02 | 87.20±0.13 | 53.45±0.09 | 46.34±0.06 | 27.55±0.05 | 49.63 |
@@ -70,10 +69,9 @@ Below, we list the zero-shot performance of the models we evaluated in the initi
 | Llama-2-7b-chat     | 4.01±0.04 | 1.59±0.05 | 28.34±0.14 | 3.37±0.06 | 34.68±0.18 | 21.48±0.25 | 4.19±0.03 | 1.09±0.01 | 12.34 |
 
 
-## Data
-The CFLUE evaluation [data](./data) in the data directory contains two subdirectories: [knowledge](./data/knowledge) and [application](./data/application). The former includes evaluation data for financial applications, while the latter contains sample evaluation data for financial applications.
-
-**Financial Knowledge Evaluation Data**
+## 数据
+[data](./data)目录下的CFLUE评测数据包含两个子目录：[knowledge](./data/knowledge)和[application](./data/application)，前者包含了金融应用的评测数据，而后者包含了金融应用的样例评测数据。
+**金融知识评测数据**
 
 | **科目** | **Subject** |
 | --- | --- |
@@ -93,7 +91,7 @@ The CFLUE evaluation [data](./data) in the data directory contains two subdirect
 | 初级经济师 | Junior Economics Professional Qualification |
 | 证券专项考试 | Securities Special Examination |
 
-Here is a sample data entry for financial knowledge:
+下面是一条金融知识的数据样例：
 ```python
 {
     "名称":"证券专项考试",
@@ -104,10 +102,9 @@ Here is a sample data entry for financial knowledge:
     "analysis":"复利是计算利息的另一种方法。按照这种方法，每经过一个计息期，要将所生利息加入本金再计利息。因此，复利终值计算公式为：FV=PV×(1+I)^n。"
 }
 ```
-Because financial knowledge includes three different types of question formats—single-choice, multiple-choice, and true/false—CFLUE utilizes corresponding prompt templates. By executing [utils/format_example.py](./utils/format_example.py), one can quickly load the data and build the final model input. Below are examples of prompt templates for single-choice and multiple-choice questions:
+由于金融知识包括单项选择题、多项选择题以及判断题三种不同的题型，CFLUE使用了对应的prompt模板，执行[utils/format_example.py](./utils/format_example.py)可以快速加载数据，构建最终的模型输入，以下是单项选择题和多项选择题的prompt模板示例：
 
-
-- Single-Choice Question Prompt Template
+- 单项选择题prompt模板
 ```python
 假设你是一位金融行业专家，请回答下列问题。
 注意：题目是单选题，只需要返回一个最合适的选项，若有多个合适的答案，只返回最准确的即可。
@@ -117,7 +114,7 @@ Because financial knowledge includes three different types of question formats�
 {choices}
 ```
 
-- Multiple-Choice Question Prompt Template
+- 多项选择题prompt模板
 ```python
 假设你是一位金融行业专家，请回答下列问题。
 注意：题目是多选题，可能存在多个正确的答案。
@@ -126,7 +123,7 @@ Because financial knowledge includes three different types of question formats�
 {question}
 {choices}
 ```
-**Financial Application Evaluation Data**
+**金融应用评测数据**
 
 <table>
     <tr>
@@ -194,9 +191,7 @@ Because financial knowledge includes three different types of question formats�
     </tr>
 </table>
 
-
-For example, in financial text classification, the data samples are as follows:
-
+以金融文本分类为例，数据样例如下
 ```python
 {
     "task":"金融文本分类",
@@ -207,10 +202,9 @@ For example, in financial text classification, the data samples are as follows:
     "history":[]
 }
 ```
+与金融知识不同的是，金融应用评测数据的'instruction'字段为使用对应prompt组装好的模型输入字段，可以直接开始评测任务。
 
-Unlike financial knowledge, the 'instruction' field in financial application evaluation data refers to the model input field that has been assembled using the corresponding prompt, allowing for the immediate commencement of the evaluation task.
-
-## Quick Start
+## 快速开始
 ```python
 #!/bin/bash
 
@@ -225,35 +219,30 @@ python cflue_main.py \
     --eval_type ${dataset_type} \
     --save_result_dir ${result_path}
 ```
-
-## How to Submit
-If you wish to participate in the evaluation of the custom large model on the Test set, you will first need to prepare a UTF-8 encoded JSON file and write it in the format of [submission_example.json](./submission_example.json). Then, send it as an attachment in an email formatted as below to [CFLUE@alibabacloud.com](mailto:CFLUE@alibabacloud.com), and CC [zhujie951121@gmail.com](mailto:zhujie951121@gmail.com)  to apply.
-
+## 如何提交
+如果期望参与自定义大模型在 Test 集上的评测，您首先需要准备一个 UTF-8 编码的 JSON 文件，并按照[submission_example.json](./submission_example.json)格式编写。然后将其作为附件，按照下面的格式内容发送邮件到 [CFLUE@alibabacloud.com](mailto:CFLUE@alibabacloud.com) ，并抄送 [zhujie951121@gmail.com](mailto:zhujie951121@gmail.com) 进行申请。
 ```
-Organization:
-Contact Information:
-Model Name:
-Model Results Attachment 📎
+单位：
+联系方式：
+模型名称：
+模型结果附件📎
 ```
 
 ## TODO
-- [x] Release the development set for the "Knowledge Assessment" section and data samples for the "Application Assessment";
-- [x] Include zero-shot results;
-- [ ] Provide detailed results for each subtask;
-- [ ] Release the full test dataset (without labels);
-- [ ] Release the training data for "Knowledge Assessment";
-
-
+- [x] 开源“知识评估”部分的 dev 集和“应用评估”数据样例；
+- [x] 添加 zero-shot 结果；
+- [ ] 添加各项子任务的细粒度结果；
+- [ ] 开源全量测试数据（无标签）；
+- [ ] 开源“知识评估”训练数据；
+- 
 ## Licenses
 ![](https://img.shields.io/badge/License-MIT-blue.svg#id=wZ1Hr&originHeight=20&originWidth=82&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-This project adheres to [MIT License](https://lbesson.mit-license.org/).
+本项目遵循 [MIT License](https://lbesson.mit-license.org/).
 
 ![](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg#id=ZNe2m&originHeight=20&originWidth=158&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-The CFLUE dataset follows [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
-
-
-## Citations
-If you use our dataset, please cite our paper.
+CFLUE 数据集遵循 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+## 引用
+如果您使用了我们的数据集，请引用我们的论文。
 ```
 @inproceedings{zhu2024cflue,
 title={Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset}, 
