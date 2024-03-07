@@ -31,22 +31,25 @@ Currently, the CFLUE V1.0 evaluation dataset is available to the public, with pl
 Below, we list the zero-shot performance of the models we evaluated in the initial version. We have conducted a comprehensive assessment of various large language models on CFLUE, including OpenAI's GPT-4 and GPT-4-turbo, as well as several models for general and financial domains. The results show that GPT-4 and GPT-4-turbo significantly outperform other models in answer prediction for Knowledge Assessment, with accuracy exceeding 60%, demonstrating their leading position in the field but also implying significant room for improvement in other language models. In Application Assessment, although these two models perform well overall, their advantage is somewhat reduced compared to some models specifically designed for Chinese. The study also found that current LLMs in the financial field, such as FinGPT V3, DISC-FinLLM, and Tongyi-Finance, perform poorly in zero-sample tests, indicating that these models’ coverage of financial knowledge needs to be strengthened. On the other hand, lightweight LLMs perform well after supervised fine-tuning, such as ChatGLM3-6B, Qwen-7B, and Baichuan2-7B, whose performance in some tasks is comparable to the larger-parameter ChatGPT.
 
 ### Knowledge Assessment
-| **Model** | **Acc** | **Weighted-F1** | **BLEU-1** | **BLEU-4** | **ROUGE-1** | **ROUGE-2** | **ROUGE-L** |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Qwen-72B | 72.8±0.23 | 73.04±0.23 | 45.78±0.39 | 26.76±0.21 | 50.78±0.15 | 31.48±0.13 | 45.28±0.15 |
-| Qwen-14B | 53.82±0.23 | 54.23±0.27 | 40.05±0.34 | 21.56±0.25 | 47.61±0.11 | 27.27±0.1 | 41.45±0.12 |
+| **Model**          | **Acc**    | **Weighted-F1** | **BLEU-1** | **BLEU-4** | **ROUGE-1** | **ROUGE-2** | **ROUGE-L** |
+|--------------------|------------| --- | --- | --- | --- | --- | --- |
+| Qwen-72B           | 72.8±0.23  | 73.04±0.23 | 45.78±0.39 | 26.76±0.21 | 50.78±0.15 | 31.48±0.13 | 45.28±0.15 |
+| GPT-4 | 60.87±0.11 | 60.82±0.1 | 37.58+0.18 | 17.26±0.09 | 44.5±0.12 | 22.42±0.08 | 32.59±0.11 |
+| GPT-4-turbo | 60.61±0.21 | 60.31±0.19 | 30.66±0.22 | 10.61±0.13 | 40.28±0.2 | 17.23±0.15 | 28.62±0.19 |
+| Qwen-14B           | 53.82±0.23 | 54.23±0.27 | 40.05±0.34 | 21.56±0.25 | 47.61±0.11 | 27.27±0.1 | 41.45±0.12 |
 | Tongyi-Finance-14B | 47.21±0.11 | 47.07±0.16 | 38.32±0.11 | 19.24±0.05 | 44.35±0.07 | 23.55±0.06 | 38.1±0.1 |
-| Qwen-7B-sft | 48.61±0.58 | 48.59±0.6 | 37.7±1.94 | 20.74±1.14 | 47.62±0.19 | 27.73±0.17 | 42.41±0.15 |
-| Qwen-7B | 43.63±0.37 | 43.25±0.41 | 42.03±0.32 | 17.85±0.29 | 39.87±0.26 | 22.11±0.21 | 35.06±0.28 |
-| ChatGLM3-6B-sft | 42.43±0.24 | 41.93±0.27 | 12.96±1.39 | 6.64±0.76 | 43.06±0.3 | 24.08±0.3 | 38.17±0.29 |
-| Baichuan2-13B | 41.5±0.29 | 40.87±0.29 | 28.64±0.57 | 14.16±0.28 | 42.04±0.06 | 22.36±0.1 | 36.51±0.05 |
-| ChatGLM3-6B | 40.78±0.33 | 41.37±0.33 | 34.7±0.47 | 16.74±0.23 | 43.74±0.08 | 22.92±0.09 | 37.68±0.04 |
-| Qwen-1.8B | 38.68±0.26 | 38.53±0.26 | 40.25±0.12 | 19.01±0.08 | 42.43±0.11 | 23.08±0.09 | 37.17±0.13 |
-| Baichuan2-7B | 32.31±0.14 | 28.77±0.19 | 21.71±1.36 | 0.17±0.08 | 7.54±0.12 | 3.23±0.09 | 6.9±0.12 |
-| Vicuna_v1.5 | 31.14±0.37 | 30.92±0.35 | 29.6±0.21 | 12.92±0.16 | 40.68±0.11 | 19.32±0.11 | 34.27±0.07 |
-| LLaMA2-7B-sft | 27.07±0.65 | 26.93±0.65 | 36.7±1.6 | 18.56±0.22 | 43.29±0.19 | 23.72±0.16 | 38.22±0.16 |
-| LLaMA2-7B | 18.79±0.25 | 15.54±0.21 | 13.11±0.11 | 5.49±0.07 | 22.02±0.19 | 9.72±0.14 | 19.06±0.2 |
-| LLaMA2-70B | 17.66±0.39 | 10.34±0.31 | 9.46±0.16 | 3.93±0.1 | 17.77±0.17 | 7.65±0.16 | 15.48±0.18 |
+| Qwen-7B-sft        | 48.61±0.58 | 48.59±0.6 | 37.7±1.94 | 20.74±1.14 | 47.62±0.19 | 27.73±0.17 | 42.41±0.15 |
+| Qwen-7B            | 43.63±0.37 | 43.25±0.41 | 42.03±0.32 | 17.85±0.29 | 39.87±0.26 | 22.11±0.21 | 35.06±0.28 |
+| ChatGPT            | 43.35±0.6  | 42.96±0.7 | 41.67±0.76 | 20.46±0.51 | 47.37±0.19 | 25.29±0.18 | 35.41±0.13 |
+| ChatGLM3-6B-sft    | 42.43±0.24 | 41.93±0.27 | 12.96±1.39 | 6.64±0.76 | 43.06±0.3 | 24.08±0.3 | 38.17±0.29 |
+| Baichuan2-13B      | 41.5±0.29  | 40.87±0.29 | 28.64±0.57 | 14.16±0.28 | 42.04±0.06 | 22.36±0.1 | 36.51±0.05 |
+| ChatGLM3-6B        | 40.78±0.33 | 41.37±0.33 | 34.7±0.47 | 16.74±0.23 | 43.74±0.08 | 22.92±0.09 | 37.68±0.04 |
+| Qwen-1.8B          | 38.68±0.26 | 38.53±0.26 | 40.25±0.12 | 19.01±0.08 | 42.43±0.11 | 23.08±0.09 | 37.17±0.13 |
+| Baichuan2-7B       | 32.31±0.14 | 28.77±0.19 | 21.71±1.36 | 0.17±0.08 | 7.54±0.12 | 3.23±0.09 | 6.9±0.12 |
+| Vicuna_v1.5        | 31.14±0.37 | 30.92±0.35 | 29.6±0.21 | 12.92±0.16 | 40.68±0.11 | 19.32±0.11 | 34.27±0.07 |
+| LLaMA2-7B-sft      | 27.07±0.65 | 26.93±0.65 | 36.7±1.6 | 18.56±0.22 | 43.29±0.19 | 23.72±0.16 | 38.22±0.16 |
+| LLaMA2-7B          | 18.79±0.25 | 15.54±0.21 | 13.11±0.11 | 5.49±0.07 | 22.02±0.19 | 9.72±0.14 | 19.06±0.2 |
+| LLaMA2-70B         | 17.66±0.39 | 10.34±0.31 | 9.46±0.16 | 3.93±0.1 | 17.77±0.17 | 7.65±0.16 | 15.48±0.18 |
 
 ### Application Assessment
 | **Model/Task**      | **Fin_TC** | **Fin_MT en2zh** | -          | **Fin_MT zh2en** | -          | **Fin_RE** | **Fin_RC** | **Fin_TG** | **Avg.** |
@@ -221,9 +224,9 @@ save_result_dir="../results"
 
 python cflue_main.py \
     --model_name ${model_name} \
-    --checkpoint_path ${model_path} \
-    --eval_type ${dataset_type} \
-    --save_result_dir ${result_path}
+    --checkpoint_path ${checkpoint_path} \
+    --eval_type ${eval_type} \
+    --save_result_dir ${save_result_dir}
 ```
 
 ## How to Submit
