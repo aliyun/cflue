@@ -16,7 +16,7 @@ Currently, the CFLUE V1.0 evaluation dataset is available to the public, with pl
 
 ![CFLUE3.jpg](./resources/cflue.jpeg)
 ## Changelog
-
+- **[2024.05.16]** Our paper "Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset" has been officially accepted by ACL-2024! 🚀🚀🚀
 - **[2024.03.06]** CFLUE has now open-sourced the development set for "Knowledge Assessment" and data samples for "Application Assessment" 🚀🚀🚀；
 ## Table of Contents
 
@@ -260,7 +260,8 @@ If you use our dataset, please cite our paper.
 ```
 @inproceedings{zhu2024cflue,
 title={Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset}, 
-author={Jie Zhu, Junhui Li, Yalong Wen, et al},
+author={Jie Zhu, Junhui Li, Yalong Wen, Lifan Guo},
+booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics(ACL-2024)},
 year={2024}
 }
 ```

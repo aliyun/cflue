@@ -15,7 +15,7 @@ CFLUE通过两个主要维度——**知识评估**和**应用评估**来衡量�
 
 ![CFLUE3.jpg](./resources/cflue.jpeg)
 ## 更新日志
-
+- **[2024.05.16]** 我们的 paper《Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset》已被 ACL-2024 正式录用！ 🚀🚀🚀
 - **[2024.03.06]** CFLUE 现已开源“知识评估”的 dev 集和“应用评估”数据样例 🚀🚀🚀；
 ## 目录
 
@@ -251,7 +251,8 @@ CFLUE 数据集遵循 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 ```
 @inproceedings{zhu2024cflue,
 title={Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset}, 
-author={Jie Zhu, Junhui Li, Yalong Wen, et al},
+author={Jie Zhu, Junhui Li, Yalong Wen, Lifan Guo},
+booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics(ACL-2024)},
 year={2024}
 }
 ```
