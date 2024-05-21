@@ -1,5 +1,5 @@
 (English|[简体中文](./README_zh.md))
-# Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset 
+# [Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset](https://arxiv.org/abs/2405.10542) 
 ![index.jpg](./resources/index.png)
 ## CFLUE Version 1.0 — Chinese Financial Language Understanding Evaluation Dataset in the Financial Domain
 Alibaba Cloud, in collaboration with Soochow University, has introduced CFLUE (Chinese Financial Language Understanding Evaluation), a novel and comprehensive benchmark designed to assess the understanding and processing capabilities of large language models within the context of Chinese financial language.

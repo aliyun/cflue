@@ -1,5 +1,5 @@
 ([English](./README.md)|简体中文)
-# Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset 
+# [Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset](https://arxiv.org/abs/2405.10542) 
 ![index.jpg](./resources/index.png)
 ## CFLUE Version 1.0 — 金融领域中文语言理解评测数据集
 阿里云、苏州大学联合推出了CFLUE（Chinese Financial Language Understanding Evaluation），这是一个新颖的、全面的评估基准，旨在评估大型语言模型在中文金融语境中的理解和处理能力。
