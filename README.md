@@ -16,6 +16,7 @@ Currently, the CFLUE V1.0 evaluation dataset is available to the public, with pl
 
 ![CFLUE3.jpg](./resources/cflue.jpeg)
 ## Changelog
+- **[2025.01.06]** Our entire dataset is now open-sourced and available for download! [Download here](https://www.modelscope.cn/datasets/tongyi_dianjin/CFLUE) 🚀🚀🚀
 - **[2024.05.16]** Our paper "Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset" has been officially accepted by ACL-2024! 🚀🚀🚀
 - **[2024.03.06]** CFLUE has now open-sourced the development set for "Knowledge Assessment" and data samples for "Application Assessment" 🚀🚀🚀；
 ## Table of Contents
@@ -242,9 +243,7 @@ Model Results Attachment 📎
 ## TODO
 - [x] Release the development set for the "Knowledge Assessment" section and data samples for the "Application Assessment";
 - [x] Include zero-shot results;
-- [ ] Provide detailed results for each subtask;
-- [ ] Release the full test dataset (without labels);
-- [ ] Release the training data for "Knowledge Assessment";
+- [x] **All data is fully open-sourced.**
 
 
 ## Licenses

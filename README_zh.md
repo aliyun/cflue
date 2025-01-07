@@ -15,6 +15,7 @@ CFLUE通过两个主要维度——**知识评估**和**应用评估**来衡量�
 
 ![CFLUE3.jpg](./resources/cflue.jpeg)
 ## 更新日志
+- **[2025.01.06]** 我们的数据集已经全部开源，现已开放下载！ [Download here](https://www.modelscope.cn/datasets/tongyi_dianjin/CFLUE) 🚀🚀🚀
 - **[2024.05.16]** 我们的 paper《Benchmarking Large Language Models on CFLUE - A Chinese Financial Language Understanding Evaluation Dataset》已被 ACL-2024 正式录用！ 🚀🚀🚀
 - **[2024.03.06]** CFLUE 现已开源“知识评估”的 dev 集和“应用评估”数据样例 🚀🚀🚀；
 ## 目录
@@ -236,10 +237,7 @@ python cflue_main.py \
 ## TODO
 - [x] 开源“知识评估”部分的 dev 集和“应用评估”数据样例；
 - [x] 添加 zero-shot 结果；
-- [ ] 添加各项子任务的细粒度结果；
-- [ ] 开源全量测试数据（无标签）；
-- [ ] 开源“知识评估”训练数据；
-- 
+- [x] **所有数据已完全开源。**
 ## Licenses
 ![](https://img.shields.io/badge/License-MIT-blue.svg#id=wZ1Hr&originHeight=20&originWidth=82&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 本项目遵循 [MIT License](https://lbesson.mit-license.org/).
